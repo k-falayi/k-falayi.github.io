@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where Citibike rides started and ended in Sep 2020 & 2021</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Where Citibike rides started and ended in Sep 2020 & 2021</h1>
+    <p>By <a href="https://kunle-falayi.github.io/" target="_blank">Kunle Falayi</a></p>
+   
+    <p>These maps represent the origin and termination points of all Citibike trips in New York City in the month of September for 
+        2020 and 2021. The maps on the left are start trips while the ones on the left are end trips</p>
+    <div class="columns">
+        <div class="column is-half-desktop is-full-mobile is-full-tablet">
+            <div id='map'></div>
+            <div id='title' class="title">
+                <p style="font-size: 14px">1. Sep 2020 ride startpoints</p>
+                <p style="font-size: 14px">2. Sep 2020 ride endpoints</p>
+                <p style="font-size: 14px">3. Sep 2021 ride startpoints</p>
+                <p style="font-size: 14px">4. Sep 2021 ride endpoints</p>
+                <hr>
+                <!-- <div id="typology-legend" class="legend"> -->
+                <p><em>Zoom in and click for details</em></p>
+                <div><span id="first" style="background-color: #dd31f7"></span>1 station, 10 trips</div>
+                <div><span id="second" style="background-color: #dd31f7"></span>14k trips</div>
+            </div>
+        </div>
+    
+        <div class="column is-half-desktop is-full-mobile is-full-tablet">
+            <div id='map2'></div>
+        </div>
+    </div>
 
+    <div class="columns">
+        <div class="column is-half-desktop is-full-mobile is-full-tablet">
+            <div id='map3'></div>
+        </div>
+        <div class="column is-half-desktop is-full-mobile is-full-tablet">
+            <div id='map4'></div>
+        </div>
+    </div>
+    <script type='text/javascript' src="map.js"></script>
+    
+</body>
+<br>
+<hr>
+<footer>
+    <p>See all datasets and analysis <a href="https://github.com/kunlefalayi/mapping-data/tree/main/citibike" target="_blank">here.</a></p>
+</footer>
+</html>

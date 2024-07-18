@@ -1,0 +1,375 @@
+body {
+    margin: 0px;
+    padding: 2px;
+    max-width: 55em;
+    margin: 0 auto;
+    font-family: 'Merriweather';
+    font-size: 18px;
+	/* background-color: #EEE9E1; */
+}
+
+h1 {
+    /* margin: 0 auto; */
+    text-align: center;
+    margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+h4 {
+    text-align: center;
+    opacity: 100%;
+    line-height: 1em;
+    top: 0px;
+    margin: 0px;
+}
+
+h2 {
+    text-align: center;
+    opacity: 100%;
+}
+
+.story {
+	display: flex;
+	justify-content: center;
+}
+
+p {
+    margin: 1em auto; 
+    margin-bottom: 0px;
+    width: 90%;
+	padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Merriweather';
+    font-size: 18px;
+}
+
+
+#map {
+	height:500px;
+	width:450px;
+	background-color: gray;
+	position: relative;
+	float:left;
+	margin: 20px;
+    margin-left: 30em auto;
+}
+#map2 {
+	height:500px;
+	width:450px;
+	position:relative;
+	float:left;
+	margin: 20px;
+    margin-left: 30em auto;
+}
+
+#map3 {
+	height:500px;
+	width:450px;
+	background-color: gray;
+	position: relative;
+	float:left;
+	margin: 20px;
+    margin-left: 30em auto;
+}
+#map4 {
+	height:500px;
+	width:450px;
+	background-color: gray;
+	position: relative;
+	float:left;
+	margin: 20px;
+    margin-left: 30em auto;
+}
+.mapboxgl-popup-content h4 {
+    font-weight: 300;
+    font-size: 0.9em;
+    border-width: 0px 0px 0.5px 0px;
+    border-style: solid;
+    border-color: rgb(80, 80, 80);
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.mapboxgl-popup-content h2 {
+    font-weight: 500;
+    margin-top: 0.5em;
+    margin-bottom: 0.3em;
+}
+.mapboxgl-popup-content p {
+    font-weight: 300;
+    margin-top: 0.3em;
+    margin-bottom: 0em;
+}
+
+.mapboxgl-canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+	width: 350px;
+    height: 450px;
+}
+
+/* .title h1{
+	opacity: 100%;
+    font-weight: 300;
+    font-weight: bold;
+    margin-top: 5px;
+	line-height: 1.1em;
+} */
+
+.title p {
+	line-height: 1em;
+	opacity: 100%;
+    padding-top: 0px;
+    padding-left: 10px;
+    margin-top: .5em;
+    margin-left: 0px;
+}
+
+.title hr {
+	border-top: .2em dashed #404040;
+	border-bottom: 0em;
+	margin-top: .75em;
+	margin-bottom: .75em;
+}
+.legend {
+    font: 1em/1.5em 'Open Sans', sans-serif;
+    padding: 1em 1em 1em 1em;
+    position: absolute;
+    right: 10px;
+    z-index: 90;
+    opacity: 100%
+  }
+
+.legend p {
+    left: 10px;
+    
+}
+
+.legend div span {
+	border-radius: 0%;
+	display: inline-block;
+	height: 10px;
+	margin-top: 0px;
+	margin-right: 20px;
+	width: 10px;
+}
+
+/* .title2 h1{
+	opacity: 100%;
+    font-weight: 300;
+    font-weight: bold;
+    margin-top: 5px;
+	line-height: 1.1em;
+} */
+
+.title2 p {
+	line-height: 1.2em;
+	opacity: 100%;
+    padding-top: 0px;
+    padding-left: 10px;
+    margin-top: .5em;
+    margin-left: 0px;
+}
+
+#first {
+	border-radius: 100%;
+	display: inline-block;
+	height: 3px;
+	margin-left: 5px;
+    margin-right: 5px;
+	width: 3px;
+}
+#second {
+	border-radius: 100%;
+	display: inline-block;
+	height: 40px;
+	margin-left: 5px;
+    margin-right: 5px;
+	width: 40px;
+}
+
+
+.title2 hr {
+	border-top: .2em dashed #404040;
+	border-bottom: 0em;
+	margin-top: .75em;
+	margin-bottom: .20em;
+}
+
+/* 
+.row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	gap: 2em;
+} */
+
+/* .column-container {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 100%;
+	flex: 1;
+	width: 1200px;
+	margin-right: auto;
+	margin-left: auto;
+	height: auto;
+} */
+
+
+.title div span {
+	border-radius: 50%;
+	display: inline-block;
+	height: 3px;
+	margin-right: 10px;
+	margin-left: 10px;
+	width: 3px;
+    margin-bottom: 0px;
+	opacity: 100;
+}
+
+.title {
+	background-color: #ffffff;
+	opacity: 50%;
+	border-radius: 1em;
+	top: 20em;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	font: .8em/.9em 'Open Sans', sans-serif;
+	line-height: 1.5em;
+	padding: .6em 1em 1em;
+	position: absolute;
+	max-width: 12%;
+	margin: 1em 2em;
+	z-index: 90;
+}
+
+/* .title2 {
+	background-color: #ffffff;
+	opacity: 50%;
+	border-radius: 1em;
+	top: 25em;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	font: .8em/.9em 'Open Sans', sans-serif;
+	line-height: 1.2em;
+	padding: 1em 1em 2em;
+	position: absolute;
+	max-width: 80%;
+	margin: 0em 36em;
+	z-index: 90;
+}
+
+.title3  {
+	background-color: #ffffff;
+	opacity: 50%;
+	border-radius: 1em;
+	top: 73em;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	font: .8em/.9em 'Open Sans', sans-serif;
+	line-height: 1.2em;
+	padding: 1em 1em 2em;
+	position: absolute;
+	max-width: 12%;
+	margin: 0em 2em;
+	z-index: 90;
+}
+
+.title4 {
+	background-color: #ffffff;
+	opacity: 50%;
+	border-radius: 1em;
+	top: 73em;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	font: .8em/.9em 'Open Sans', sans-serif;
+	line-height: 1.2em;
+	padding: 1em 1em 2em;
+	position: absolute;
+	max-width: 80%;
+	margin: 0em 36em;
+	z-index: 90;
+} */
+
+
+hr {
+  background-color: whitesmoke;
+  border: none;
+  display: block;
+  height: 2px;
+  margin: 1.5rem 0;
+}
+
+
+
+
+/* Bulma Grid */
+.column {
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding: 0.75rem;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .column.is-narrow-mobile {
+    flex: none;
+    width: unset;
+  }
+  .column.is-full-mobile {
+    flex: none;
+    width: 100%;
+  }
+ 
+  .column.is-half-mobile {
+    flex: none;
+    width: 50%;
+  }
+  .column.is-one-third-mobile {
+    flex: none;
+    width: 33.3333%;
+  }
+  .column.is-offset-12-mobile {
+    margin-left: 100%;
+  }
+}
+
+
+
+@media screen and (min-width: 1024px) {
+  .column.is-narrow-desktop {
+    flex: none;
+    width: unset;
+  }
+
+  .column.is-half-desktop {
+    flex: none;
+    width: 50%;
+  }
+ 
+.columns {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+  margin-top: -0.75rem;
+}
+
+
+@media screen and (min-width: 769px), print {
+  .columns:not(.is-desktop) {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .columns.is-desktop {
+    display: flex;
+  }
+}
+
+
+
+footer {
+  background-color: #e8e8e8;
+  padding: 1rem 1rem 1rem;
+}
+}

@@ -46,7 +46,7 @@
     
         
 
-    d3.csv("all_csv/NigeriaGDP.csv")
+    d3.csv("all_csvs/NigeriaGDP.csv")
     .then(function (data){
 
         x.domain(data.map(function(d) { return +d.year; }));

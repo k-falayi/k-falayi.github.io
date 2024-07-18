@@ -1,0 +1,415 @@
+body, html {
+  margin: 0px;
+  padding: 2px;
+  /* max-width: 55em; */
+  margin: 0 auto;
+  font-family: 'Merriweather';
+  font-size: 18px;
+  height: 100%;
+background-color: #343d4b;
+}
+
+h1 {
+  /* margin: 0 auto; */
+  font-size: xx-large;
+  text-align: center;
+  font-size: 100px;
+  margin: 0 auto;
+  color: rgb(219, 217, 217);
+  stroke: rgb(80, 78, 78);
+  /* text-shadow: -1px 0 #d6d3d3, 0 1px #d6d3d3, 1px 0 #d6d3d3, 0 -1px #d6d3d3; */
+}
+
+h2, h3, h4, p, em, a{
+  color: rgb(219, 217, 217);
+}
+
+h2 {
+  text-align: center;
+  opacity: 100%;
+  line-height: 1.2em;
+  margin-top: 50px;
+  margin: 0 auto;
+  width: 50%;
+}
+
+h3, h4 {
+  text-align: center;
+  opacity: 100%;
+  line-height: 1em;
+  margin-top: 70px;
+  margin: 0 auto;
+  /* width: 50%; */
+}
+
+
+/* h3#nutgrapf{
+  padding: 50px;
+  text-align: center;
+  opacity: 100%;
+  line-height: 1em;
+  margin-top: 30px;
+  width: 50%;
+  margin: 0 auto;
+} */
+
+
+h2 {
+  text-align: center;
+  opacity: 100%;
+}
+
+.story {
+display: flex;
+justify-content: center;
+}
+
+p {
+  margin: 1em auto; 
+  margin-bottom: 20px;
+  width: 55%;
+padding-left: 20px;
+  padding-right: 20px;
+  font-family: 'Merriweather';
+  font-size: 18px;
+
+}
+em{
+  margin: 1em auto; 
+  margin-bottom: 0px;
+  width: 100%;
+padding-left: 20px;
+  padding-right: 20px;
+  font-family: 'Merriweather';
+  font-size: 18px;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+  width: 100%;
+  height: auto;
+}
+
+.index-image {
+  /* width: 100%;
+  height: auto;
+  /* width: 200px;
+  height: 300px; */
+  /* object-fit: cover;
+  position: static; */
+
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-color: #2e3440!important;
+  background-blend-mode: multiply;
+  transition: opacity .4s ease-in;
+
+
+}
+/* .headline { */
+  /* Centered text */
+  /* position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+
+
+
+.hidden{
+  display: none;
+}
+
+.body-text{
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+
+#chart1 {
+  margin: 0 auto;
+  justify-content: center;
+  /* position: relative; */
+  width: fit-content;
+  top: calc((100vh - 400px) / 2);
+  /* margin-bottom: 120px; */
+}
+#chart2 {
+  position: relative;
+  margin: 0 auto;
+  width: fit-content;
+  top: calc((100vh - 400px) / 2);
+}
+#chart3 {
+  /* position: relative; */
+  justify-content: center;
+  margin: 0 auto;
+  width: fit-content;
+  /* top: calc((100vh - 400px) / 2); */
+}
+
+
+.scrolly {    
+  margin-top: 25px;
+}
+
+#text-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  
+}
+
+.step {
+  min-height: 90vh;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.step > .text-box {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #343d4b;
+  box-shadow: 0 3px 6px rgba(193, 192, 192, 0.9);
+  padding: 15px;
+  font-size: 14px;
+}
+
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top:0;
+  height: 100vh;
+  width: 100%;
+  padding-top: 20px;
+}
+
+
+.flourish-container {
+  display: flex;
+  /* width: 100%; */
+  height: 150px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin: 0 auto;
+
+}
+
+
+hr{
+  width:20%;
+  text-align:left;
+  margin:auto;
+  margin-top: 50px;
+}
+
+hr#viz-divider {
+  width:60%;
+  text-align:left;
+  margin:auto;
+  margin-top: 50px;
+}
+
+img.center {
+  border-radius: 8px;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 100;
+  height: auto;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+div.viz {
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 40 px;
+  /* margin:auto;
+  margin-top: 50px; */
+}
+
+div#options {
+  margin: 0 auto;
+  /* margin: 1em auto;  */
+  margin-bottom: 0px;
+  width: 55%;
+padding-left: 20px;
+  padding-right: 20px;
+  font-family: 'Merriweather';
+  font-size: 18px;
+}
+
+.story-body {
+  margin-top: 20px;
+  padding-top: 50px;
+/* max-width: 800px;
+margin: 0 auto; */
+}
+
+@media only screen and (max-width: 480px) {
+img {
+  width: 100%;
+}
+}
+
+.error {
+  color: red;
+}
+
+#vis {
+  justify-content: center;
+  margin: 0 auto;
+  width: 60%px;
+  text-align: center;
+
+}
+.parallax2 {
+  /* The image used */
+  background-image: url("images/onyeka-stage1.jpg");
+
+  /* Set a specific height */
+  min-height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.parallax1 {
+  background-image: url("images/cofounders.jpg");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.parallax3 {
+  background-image: url("images/farmcrowdy1.jpg");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+.parallax4 {
+  background-image: url("images/farmcrowdy2.jpg");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media only screen and (max-device-width: 1366px) {
+  .parallax1, .parallax2, .parallax3, .parallax4 {
+    background-attachment: scroll;
+  }
+}
+
+footer {
+  color: rgb(219, 217, 217);
+  margin: 1em auto; 
+  margin-bottom: 50px;
+  width: 55%;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+
+hr#footer-divider {
+  width:80%;
+  text-align:left;
+  margin:auto;
+  margin-top: 50px;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.highlight {
+  fill: orange;
+}
+
+
+.bar--positive {
+fill: steelblue;
+}
+
+.bar--negative {
+fill: darkorange;
+}
+
+.axis text {
+font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+fill: none;
+stroke: #000;
+shape-rendering: crispEdges;
+}
+
+
+
+
+
+/*  */
+
+.bar--positive {
+  fill: steelblue;
+}
+
+.bar--negative {
+  fill: darkorange;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+canvas.marks {
+  max-width: 120%!important;
+  height: auto!important;
+}
+
+.axisWhite line{
+  stroke: #d8d6d6;
+}
+
+.axisWhite path{
+  stroke: #d8d6d6;
+}
+
+.axisWhite text{
+  stroke: #d8d6d6;
+}

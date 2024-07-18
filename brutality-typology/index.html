@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US county typology and police brutality map</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Interactive maps of county typology and police brutality </h1>
+    By <a href="https://kfalayi.github.io/" target="_blank">Kunle Falayi</a>
+    <div id='map'></div>
+    <p>The typology codes provided by the <a href="https://www.ers.usda.gov/data-products/county-typology-codes.aspx" target="_blank">USDA</a> 
+    puts the economic dependence of each county in the US in six main overlapping categories. The typology codes are important for policymakers, researchers in determining
+    the economic conditions of every county. 
+    </p>
+    <div id='title' class="title">
+        <h1>US counties' economic typology</h1>
+        <p>The typology codes mapped here classify all counties according to six economic dependence.</p>
+        <hr>
+        <!-- <div id="typology-legend" class="legend"> -->
+        <div id='typology-legend' class="legend">
+            <h4>Counties by typology code</h4>
+            <p><em>Zoom in and click on county for more details</em></p>
+            <div><span style="background-color: #ab9191"></span>Nonspecialized</div>
+            <div><span style="background-color: #6193c7"></span>Manufacturing</div>
+            <div><span style="background-color: #229c38"></span>Farming</div>
+            <div><span style="background-color: #f8c347"></span>Fed/State Govt</div>
+            <div><span style="background-color: #c771ba"></span>Recreation</div>
+            <div><span style="background-color: #76e3de"></span>Mining</div>
+        </div>
+    </div>
 
+    <h2>Police brutality during George Floyd protests</h2>
+    <div id='map2'></div>
+    <p>The murder of George Floyd by police officer Derek Chauvin in Minneapolis on May 25, 2020 
+        sparked a wave of protests across the nation.
+    <p>However, as the protests spread due to citizen's outrage, confrontations between police and protesters escalated.
+    <p>This <a href="https://github.com/2020PB/police-brutality" target="_blank">data of reported police brutality</a> during the protests
+        was collated for the use of the public, journalists and activists. </p>
+        
+        <div id='title' class="title2">
+            <h3>Confrontations between protesters and police spiked during the protests, so did police brutality</h3>
+            <hr>
+            <!-- <div id="typology-legend" class="legend"> -->
+            <div id='typology-legend' class="legend2">
+                <p><em>Zoom in to see more dots, precise location of incidents</em></p>
+                <div><span style="background-color: #1dab32"></span>1 incident</div>
+            </div>
+        </div>
+
+        
+        <!-- <div id="typology-legend" class="legend"> -->
+        <!-- <div id='brutality-legend' class="legend2">
+            <h4>Map of police brutality</h4>
+            <p><em>Zoom in to see more dots, click dot for details of incidents</em></p>
+            <div></p><span style="background-color: #1dab32"></span>1 incident</div>
+
+        </div> -->
+    </div>
+            
+        <!-- <p>Click on any state to see result. You may also zoom in to see county-level results</p> -->
+        
+        <!-- <p>This graduated point map is another version of the same election result inspired by a <a href="https://www.nytimes.com/elections/2012/results/president.html" target="_blank">similar map</a>
+            created by the New York Times after the 2012 Presidential Election.</p>
+        <div id='map2'></div> -->
+    <script type='text/javascript' src="map.js"></script>
+    
+</body>
+<br>
+<hr>
+<footer>
+    <p>See all datasets and analysis <a href="https://github.com/kfalayi/mapping-website/tree/main/brutality-typology" target="_blank">here.</a></p>
+</footer>
+</html>

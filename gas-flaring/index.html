@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gas flaring</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="story-body">
+        <h1>US leads post-COVID reduction in gas flaring</h1>
+        <p>By <a href="https://kfalayi.github.io/" target="_blank">Kunle Falayi</a></p>
+        <p>The U.S., one of the top contributors to gas flaring globally, reduced its gas flaring by more than 3 billion cubic meters in 2021, data from the World Bank Gas Flaring Tracker has shown.
+            It is the largest gas flaring reduction after the year COVID disrupted supply chain across the world and led to a <a href="https://www2.deloitte.com/ch/en/pages/energy-and-resources/articles/oil-and-gas-industry-outlook.html">25 per cent dip </a>in the demand for gas up according to estimation by auditing giant, Deloitte. 
+            In 2020, the U.S. flared almost 12 billion cubic meters of gas in 2020.</p>
+        <div>
+            <h4 style="text-align: center">Change in 2020 and 2021 flaring levels (billion cubic meters)</h4>
+            <img src="images/viz.png" class="responsive">
+            <em>Source: World Bank's Global Gas Flaring Data | Made with Altair</em>
+        </div>
 
+        <p>Even though the data shows that Iran made the highest increase in post-COVID gas flaring levels, Russia maintains the lead as the highest contributor globally, burning over 25 billion m3 of gas in the atmosphere in 2021. An estimated 143 billion m3 of gas worth $145 billion was flared in 2021, according to the World Bank.</p>
+        
+        <br>
+        <div class="chart">
+            <iframe title="[ Insert title here ]" aria-label="Dot Plot" id="datawrapper-chart-VZZVJ" src="https://datawrapper.dwcdn.net/VZZVJ/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="696"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+            </script>    
+        </div>
+
+
+
+
+
+    <div id='map'>
+        <div id="gas-flare-legend" class="legend">
+            <h3>Amount of gas flared in 2021 (in billion m<sup>3</sup>)</h3>
+            <p>Click countries for details</p>
+            <div><span style="background-color: #f60814"></span>25</div>
+            <!-- <div><span style="background-color: #f03b20"></span>20</div> -->
+            <div><span style="background-color: #fd8d3c"></span>15</div>
+            <!-- <div><span style="background-color: #feb24c"></span>10</div>
+            <div><span style="background-color: #fed976"></span>5</div> -->
+            <div><span style="background-color: #ffffb2"></span>1</div>
+            <!-- <div><span style="background-color: #4c85e0"></span>0</div> -->
+            <em>Note: Other countries globally contributing 8.2billion cubic meters of gas flaring not highlighted</em>
+            <em>Source: <a href="https://www.worldbank.org/en/programs/gasflaringreduction/global-flaring-data">World Bank</a></em>
+        </div>
+    </div>
+
+    <p>World Bank's <a href="https://www.worldbank.org/en/programs/gasflaringreduction/global-flaring-data">2022 Global Gas Flaring Data </a> shows the U.S. gas flaring levels spiked in 2019 to 17.29 billion. The oil and gas industry says the practice, which introduces pollutants like sulfur dioxide and generates greenhouse gases, is unavoidable. Excess gas is flared to release pressure and prevent the risk of explosions at oil exploration sites.</p>
+    <p> According to the World Bank, its gas flaring tracker is the only  global and independent indicator of routine gas flaring,  allowing the global body to “monitor global flaring levels and track progress toward our goal of <a href="https://www.worldbank.org/en/programs/zero-routine-flaring-by-2030">Zero Routine Flaring by 2030.</a>”</p>
+    <p>Even though the data shows that Iran made the highest increase in post-COVID gas flaring levels, Russia maintains the lead as the highest contributor globally, burning over 25 billion m<sup>3</sup> of gas in the atmosphere in 2021.</p>
+    <p>Six countries were responsible for over 64 percent of the volume, the data shows. The countries are Russia, Iraq, Iran, U.S., Algeria, Venezuela and Nigeria.</p>
+    <p>The World Bank attributes the reduction in gas flaring in the U.S. to drop in oil production and construction of gas infrastructure which limited the need to flare the excess.</p>
+
+    <script type='text/javascript' src="map.js"></script>
+ 
+</body>
+<hr>
+<footer>
+    <p>See all datasets and analysis <a href="https://github.com/kfalayi/mapping-data/tree/main/gas-flaring" target="_blank">here.</a></p>
+</footer>
+</html>

@@ -28,7 +28,7 @@
         .x(d => xPositionScale(d.Year))
         .y(d => yPositionScale(d.pct))
 
-    d3.csv("all_csv/topGDP.csv")
+    d3.csv("all_csvs/topGDP.csv")
         .then(ready)
         .catch(function (error) {
             console.log("Failed with", error)

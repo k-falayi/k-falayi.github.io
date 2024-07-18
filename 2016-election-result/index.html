@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2020 Presidential Election Map</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="story">
+        <h1>Mapping the 2016 presidential election results</h1>
+
+        <p>By <a href="https://kfalayi.github.io/" target="_blank">Kunle Falayi</a></p>
+        <p>This map shows the state and county-level results of the 2020 Presidential Election. 
+        This map is modelled after the choropleth style used in this 
+        <a href="https://www.nytimes.com/interactive/2019/11/05/us/elections/results-kentucky-governor-general-election.html" targe="_blank">New York Times piece.</a>
+        Both maps were created using mapbox.
+    </p>
+        <p>Click on any state to see result. You may also zoom in to see county-level results</p>
+    
+        <div id='map'></div>
+        <!-- <p>This graduated point map is another version of the same election result inspired by <a href="https://www.nytimes.com/elections/2012/results/president.html" target="_blank">one of the maps</a>
+            created by the New York Times during the 2012 Presidential Election to show the size of lead.</p>
+        <div id='map2'></div>
+     -->
+    <script type='text/javascript' src="map.js"></script>
+    </div>
+</body>
+</html>

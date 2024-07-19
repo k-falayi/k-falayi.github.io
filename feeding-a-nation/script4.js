@@ -1,0 +1,16 @@
+(function(vegaEmbed) {
+    var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axisBottom": {"labelColor": "white", "titleColor": "white"}, "axisLeft": {"labelColor": "white", "titleColor": "white"}, "background": "#353d4c"}, "data": {"name": "data-034bc4b3c46959a53ac79f1f736e44c8"}, "mark": "bar", "encoding": {"color": {"condition": {"value": "red", "test": "(datum['GDP Percentage Change'] < 0)"}, "value": "#6d98e8"}, "tooltip": [{"field": "GDP Percentage Change", "type": "quantitative"}], "x": {"field": "year", "type": "ordinal"}, "y": {"axis": {"format": "%"}, "field": "GDP Growth Rate", "type": "quantitative"}}, "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-034bc4b3c46959a53ac79f1f736e44c8": [{"year": 2002, "GDP Percentage Change": 15.32915574, "GDP Growth Rate": 0.1532915574}, {"year": 2003, "GDP Percentage Change": 7.34719497, "GDP Growth Rate": 0.0734719497}, {"year": 2004, "GDP Percentage Change": 9.250558228, "GDP Growth Rate": 0.09250558228}, {"year": 2005, "GDP Percentage Change": 6.438516525, "GDP Growth Rate": 0.06438516525}, {"year": 2006, "GDP Percentage Change": 6.059428031, "GDP Growth Rate": 0.060594280310000005}, {"year": 2007, "GDP Percentage Change": 6.591130361, "GDP Growth Rate": 0.06591130361}, {"year": 2008, "GDP Percentage Change": 6.764472778, "GDP Growth Rate": 0.06764472778}, {"year": 2009, "GDP Percentage Change": 8.036925102, "GDP Growth Rate": 0.08036925101999999}, {"year": 2010, "GDP Percentage Change": 8.005655915, "GDP Growth Rate": 0.08005655915}, {"year": 2011, "GDP Percentage Change": 5.307924204, "GDP Growth Rate": 0.05307924204}, {"year": 2012, "GDP Percentage Change": 4.230061175, "GDP Growth Rate": 0.04230061175}, {"year": 2013, "GDP Percentage Change": 6.671335393, "GDP Growth Rate": 0.06671335393}, {"year": 2014, "GDP Percentage Change": 6.309718656, "GDP Growth Rate": 0.06309718656}, {"year": 2015, "GDP Percentage Change": 2.652693295, "GDP Growth Rate": 0.026526932950000002}, {"year": 2016, "GDP Percentage Change": -1.61686895, "GDP Growth Rate": -0.0161686895}, {"year": 2017, "GDP Percentage Change": 0.80588662, "GDP Growth Rate": 0.0080588662}, {"year": 2018, "GDP Percentage Change": 1.922757342, "GDP Growth Rate": 0.019227573419999998}, {"year": 2019, "GDP Percentage Change": 2.208429277, "GDP Growth Rate": 0.02208429277}, {"year": 2020, "GDP Percentage Change": -1.794253082, "GDP Growth Rate": -0.01794253082}, {"year": 2021, "GDP Percentage Change": 3.647186541, "GDP Growth Rate": 0.03647186541}]}};
+    var embedOpt = {"mode": "vega-lite"};
+
+    function showError(el, error){
+        el.innerHTML = ('<div class="error" style="color:red;">'
+                        + '<p>JavaScript Error: ' + error.message + '</p>'
+                        + "<p>This usually means there's a typo in your chart specification. "
+                        + "See the javascript console for the full traceback.</p>"
+                        + '</div>');
+        throw error;
+    }
+    const el = document.getElementById('vis');
+    vegaEmbed("#vis", spec, embedOpt)
+      .catch(error => showError(el, error));
+  })(vegaEmbed);

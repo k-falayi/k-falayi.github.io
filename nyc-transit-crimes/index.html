@@ -1,1 +1,1226 @@
+<!DOCTYPE html>
+<html>
+       <head>
+          <title>Arrest data shows Manhattan is NYC's transit crimes hub</title>
+          <meta property="og:title" content="Arrest data shows Manhattan is NYC's transit crimes hub" />
+          <meta property="og:type" content="article" />
+          <meta property="og:description" content="As the recent Brooklyn subway shooting reignites discourse on the safety of users of New York City's transit system, 
+		a look at data from the last five years shows that Manhattan might be deserving of more police attention than other neighborhoods." />
+          <meta property="og:url" content="https://kfalayi.github.io/NY-transit-crimes/index.html" />
+          <meta property="og:locale" content="en_US" />
+          <meta name="twitter:card" content="transit.jpeg">
+          <meta name="twitter:title" content="@kfalayi">
+          <meta name="twitter:description"
+               content="Hi! I'm Kunle. I'm a data journalism grad student at Columbia University and a business journalist at the BBC." />
+          <meta name="twitter:site" content="@kfalayi">
+          <meta name="keywords" content="data journalist, data, data journalism, business journalist, BBC">
+          <link rel="stylesheet" href="style.css">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+      #scrolly {
+        position: relative;
+        padding: 1rem;
+      }
+
+      .scrolly-overlay {
+        position: relative;
+        padding: 0;
+        max-width: 35rem;
+        margin: 0 auto;
+      }
+
+      .sticky-thing {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        z-index: 0;
+        top: 0;
+        height: 90vh;
+        /* Center everything inside */
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .step {
+        margin: 0 auto 2rem auto;
+        margin-bottom: 35rem;
+        background-color: #fff;
+        color: black;
+      }
+
+      .step p {
+        text-align: left;
+        padding: 1rem;
+        font-size: 1rem;
+      }
+
+      .hidden { visibility: hidden; }
+
+	  /* When it's less than 700 pixels wide, do normal scrollytelling */
+	  @media only screen and (min-width: 700px) {
+		#scrolly.side-by-side {
+			display: flex;
+		}
+
+		#scrolly.side-by-side > div {
+			flex-basis: 0;
+			flex-grow: 1;
+			flex-shrink: 1;
+			padding: 0.75em;
+		}
+
+		#scrolly.side-by-side .scrolly-overlay {
+			margin-top: 40vh;
+			order: 0;
+			/* Change these to adjust sizing options */
+			min-width: 15rem;
+			max-width: 20rem;
+		}
+
+		#scrolly.side-by-side .sticky-thing {
+			order: 1;
+			flex-grow: 2;
+		}
+	  }
+	</style>
+	<style>
+			#g-all_cases-all_web, #g-top_10_svg-top_web, #g-all_cases-all_laptop, #g-top_10_svg-top_laptop, #g-all_cases-all_mobile, #g-top_10_svg-top_mobile {
+				display: none;
+				background-color:#f8f6f6;
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+			@media (max-width: 490px) {
+				#g-all_cases-all_mobile, #g-top_10_svg-top_mobile {
+					display: block;
+				}
+			}
+			@media (min-width: 490) and (max-width: 620px) {
+				#g-all_cases-all_laptop, #g-top_10_svg-top_laptop {
+					display: block;
+				}
+			}
+			@media (min-width: 620px) {
+				#g-all_cases-all_web, #g-top_10_svg-top_web {
+					display: block;
+				}
+			}
+			body {
+				background-color: #ffffff;
+			}
+		
+	</style>
+	<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.0.4/scrollama.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <p class="top">
+                <a href="kfalayi.github.io">
+                <span class="name" width="240" height="200">KUNLE FALAYI</span>
+                </a>
+            </p>
+            <hr>
+            <div class="buttons">
+                    <a href="https://kfalayi.github.io/portfolio.html">
+                        <span class="check">Portfolio</span>
+                    </a>
+                    <a href="https://kfalayi.github.io/resume.html">
+                        <span class="check">Resume</span>
+                    </a>
+            </div>
+            <hr>
+            <div class="story">
+                <div class="story-body">
+					<h2>Arrest data shows Manhattan is NYC's transit crimes hub</h2>
+					<iframe title="Higher arrests for crimes in Manhattan despite 'over-policing' in neighborhoods of color" aria-label="Map" id="datawrapper-chart-JyYkD" src="https://datawrapper.dwcdn.net/JyYkD/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="661"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+					</script>
+					<p>
+					As the recent Brooklyn subway shooting reignites discourse on the safety of users of New York City's transit system, a look at data from the last five years 
+					shows that Manhattan might be deserving of more police attention than other neighborhoods.
+					</p>
+					<p>
+					There have been <a href="https://thecrimereport.org/2020/09/23/overpolicing-still-common-in-nyc-black-neighborhoods-report-finds/">reports</a> and criticism of 
+					'over-policing' in the city's neighborhoods of color. While it is impossible to determine how many cops are deployed in each neighborhood as NYPD does not make this public,
+					data shows higher arrests for transit crimes in the city's financial district and other parts of Manhattan.
+					</p>
+
+					
+
+
+
+
+
+
+
+					<h4>Assault, sex crimes are the 4 most commmon types of transit crimes in NYC</h4>
+
+					<!-- Insert scroll rules here for timeline -->
+					<section id="scrolly" class="side-by-side">
+						<div class="sticky-thing">
+							<div class="ai2html-container">
+
+						<!-- ai2html goes below this line -->					
+
+
+
+
+
+
+
+
+						
+
+
+						
+
+						<!-- Generated by ai2html v0.106.0 - 2022-04-16 20:30 -->
+						<!-- ai file: all_cases.ai -->
+						<style media="screen,print">
+							#g-all_cases-box ,
+							#g-all_cases-box .g-artboard {
+								margin:0 auto;
+							}
+							#g-all_cases-box p {
+								margin:0;
+							}
+							#g-all_cases-box .g-aiAbs {
+								position:absolute;
+							}
+							#g-all_cases-box .g-aiImg {
+								position:absolute;
+								top:0;
+								display:block;
+								width:100% !important;
+							}
+							#g-all_cases-box .g-aiSymbol {
+								position: absolute;
+								box-sizing: border-box;
+							}
+							#g-all_cases-box .g-aiPointText p { white-space: nowrap; }
+							#g-all_cases-all_mobile {
+								position:relative;
+								overflow:hidden;
+							}
+							#g-all_cases-all_mobile p {
+								font-family:georgia,'times new roman',times,serif;
+								line-height:14px;
+								height:auto;
+								opacity:1;
+								letter-spacing:0em;
+								font-size:12px;
+								text-align:left;
+								color:rgb(0,0,0);
+								text-transform:none;
+								padding-bottom:0;
+								padding-top:0;
+								mix-blend-mode:normal;
+								font-style:normal;
+								position:static;
+							}
+							#g-all_cases-all_mobile .g-pstyle0 {
+								font-weight:bold;
+								height:14px;
+								text-align:right;
+							}
+							#g-all_cases-all_mobile .g-pstyle1 {
+								height:14px;
+								text-align:right;
+							}
+							#g-all_cases-all_web {
+								position:relative;
+								overflow:hidden;
+							}
+							#g-all_cases-all_web p {
+								font-family:georgia,'times new roman',times,serif;
+								line-height:14px;
+								height:auto;
+								opacity:1;
+								letter-spacing:0em;
+								font-size:12px;
+								text-align:left;
+								color:rgb(0,0,0);
+								text-transform:none;
+								padding-bottom:0;
+								padding-top:0;
+								mix-blend-mode:normal;
+								font-style:normal;
+								position:static;
+							}
+							#g-all_cases-all_web .g-pstyle0 {
+								font-weight:bold;
+								height:14px;
+								text-align:right;
+							}
+							#g-all_cases-all_web .g-pstyle1 {
+								height:14px;
+								text-align:right;
+							}
+							#g-all_cases-all_laptop {
+								position:relative;
+								overflow:hidden;
+							}
+							#g-all_cases-all_laptop p {
+								font-family:georgia,'times new roman',times,serif;
+								line-height:14px;
+								height:auto;
+								opacity:1;
+								letter-spacing:0em;
+								font-size:12px;
+								text-align:left;
+								color:rgb(0,0,0);
+								text-transform:none;
+								padding-bottom:0;
+								padding-top:0;
+								mix-blend-mode:normal;
+								font-style:normal;
+								position:static;
+							}
+							#g-all_cases-all_laptop .g-pstyle0 {
+								font-weight:bold;
+								height:14px;
+								text-align:right;
+							}
+							#g-all_cases-all_laptop .g-pstyle1 {
+								height:14px;
+								text-align:right;
+							}
+
+						</style>
+
+						<div id="g-all_cases-box" class="ai2html">
+
+							<!-- Artboard: all_mobile -->
+							<div id="g-all_cases-all_mobile" class="g-artboard" style="max-width: 450px;max-height: 517px" data-aspect-ratio="0.87" data-min-width="0" data-max-width="563">
+						<div style="padding: 0 0 114.9674% 0;"></div>
+								<img id="g-all_cases-all_mobile-img" class="g-aiImg" alt="" src="all_cases-all_mobile.png"/>
+						<!-- Generator: Adobe Illustrator 26.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+						<svg class="g-aiImg" version="1.2" baseProfile="tiny" id="g-all_cases-all_mobile-interactions-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+							x="0px" y="0px" viewBox="0 0 450 517.353" overflow="visible" xml:space="preserve">
+						<g>
+							
+								<ellipse id="path-3" data-name="path-3" fill="none" stroke="#DF2500" stroke-miterlimit="10" cx="402.179" cy="491.832" rx="16.097" ry="11.843"/>
+						</g>
+						<style>
+						#g-all_cases-all_mobile-interactions-img rect, #g-all_cases-all_mobile-interactions-img circle, #g-all_cases-all_mobile-interactions-img path, #g-all_cases-all_mobile-interactions-img line, #g-all_cases-all_mobile-interactions-img polyline, #g-all_cases-all_mobile-interactions-img polygon { vector-effect: non-scaling-stroke; }
+						</style>
+						</svg>
+
+								<div id="g-ai0-1" class="g-interactions g-aiAbs g-aiPointText" style="top:2.9239%;margin-top:-15.1px;right:7.5597%;width:72px;">
+									<p class="g-pstyle0">Precinct</p>
+									<p class="g-pstyle1">113th</p>
+								</div>
+								<div id="g-ai0-2" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:32.0667%;margin-top:-7.9px;right:74.0091%;width:120px;">
+									<p class="g-pstyle1">Forcible touching</p>
+								</div>
+								<div id="g-ai0-3" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:33.4197%;margin-top:-7.9px;right:46.1772%;width:56px;">
+									<p class="g-pstyle0">2020</p>
+								</div>
+								<div id="g-ai0-4" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:34.3862%;margin-top:-7.9px;right:84.6524%;width:72px;">
+									<p class="g-pstyle1">115 cases</p>
+								</div>
+								<div id="g-ai0-5" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:35.3526%;margin-top:-7.9px;right:48.9692%;width:43px;">
+									<p class="g-pstyle1">242</p>
+								</div>
+								<div id="g-ai0-6" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:38.0587%;margin-top:-7.9px;right:47.2877%;width:52px;">
+									<p class="g-pstyle0">2017</p>
+								</div>
+								<div id="g-ai0-7" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:38.252%;margin-top:-7.9px;right:82.4537%;width:82px;">
+									<p class="g-pstyle1">Sex crimes</p>
+								</div>
+								<div id="g-ai0-8" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:40.1849%;margin-top:-7.9px;right:49.4671%;width:42px;">
+									<p class="g-pstyle1">375</p>
+								</div>
+								<div id="g-ai0-9" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:40.1849%;margin-top:-7.9px;right:91.1582%;width:43px;">
+									<p class="g-pstyle1">427</p>
+								</div>
+								<div id="g-ai0-10" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:45.0172%;margin-top:-7.9px;right:78.6759%;width:102px;">
+									<p class="g-pstyle1">Felony assault</p>
+								</div>
+								<div id="g-ai0-11" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:45.4038%;margin-top:-7.9px;right:47.4942%;width:53px;">
+									<p class="g-pstyle0">2021</p>
+								</div>
+								<div id="g-ai0-12" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:47.3367%;margin-top:-7.9px;right:49.2539%;width:45px;">
+									<p class="g-pstyle1">600</p>
+								</div>
+								<div id="g-ai0-13" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:47.7233%;margin-top:-7.9px;right:91.0748%;width:45px;">
+									<p class="g-pstyle1">600</p>
+								</div>
+								<div id="g-ai0-14" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:52.5556%;margin-top:-7.9px;right:47.4056%;width:53px;">
+									<p class="g-pstyle0">2019</p>
+								</div>
+								<div id="g-ai0-15" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:54.6818%;margin-top:-7.9px;right:49.5201%;width:44px;">
+									<p class="g-pstyle1">660</p>
+								</div>
+								<div id="g-ai0-16" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:55.455%;margin-top:-7.9px;right:85.1203%;width:73px;">
+									<p class="g-pstyle1">Assault 3</p>
+								</div>
+								<div id="g-ai0-17" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:57.3879%;margin-top:-7.9px;right:89.9921%;width:49px;">
+									<p class="g-pstyle1">1498</p>
+								</div>
+								<div id="g-ai0-18" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:60.2872%;margin-top:-7.9px;right:47.096%;width:54px;">
+									<p class="g-pstyle0">2018</p>
+								</div>
+								<div id="g-ai0-19" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:62.4134%;margin-top:-7.9px;right:49.4468%;width:43px;">
+									<p class="g-pstyle1">763</p>
+								</div>
+								<div id="g-ai0-20" class="g-interactions g-aiAbs g-aiPointText" style="top:82.1364%;margin-top:-7.9px;right:7.7782%;width:47px;">
+									<p class="g-pstyle1">84th</p>
+								</div>
+								<div id="g-ai0-21" class="g-interactions g-aiAbs g-aiPointText" style="top:84.4528%;margin-top:-7.9px;right:10.2227%;width:36px;">
+									<p class="g-pstyle1">1st</p>
+								</div>
+								<div id="g-ai0-22" class="g-interactions g-aiAbs g-aiPointText" style="top:87.3567%;margin-top:-7.9px;right:8.2227%;width:45px;">
+									<p class="g-pstyle1">18th</p>
+								</div>
+								<div id="g-ai0-23" class="g-interactions g-aiAbs g-aiPointText" style="top:90.8358%;margin-top:-7.9px;right:8.4447%;width:44px;">
+									<p class="g-pstyle1">13th</p>
+								</div>
+								<div id="g-ai0-24" class="g-interactions g-aiAbs g-aiPointText" style="top:94.7047%;margin-top:-8px;right:8.2227%;width:45px;">
+									<p class="g-pstyle1">14th</p>
+								</div>
+							</div>
+
+							<!-- Artboard: all_web -->
+							<div id="g-all_cases-all_web" class="g-artboard" style="width:760px; height:605.39996337891px;" data-aspect-ratio="1.255" data-min-width="760">
+						<div style=""></div>
+								<img id="g-all_cases-all_web-img" class="g-aiImg" alt="" src="all_cases-all_web.png"/>
+						<!-- Generator: Adobe Illustrator 26.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+						<svg class="g-aiImg" version="1.2" baseProfile="tiny" id="g-all_cases-all_web-interactions-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+							x="0px" y="0px" viewBox="0 0 760.318 605.4" overflow="visible" xml:space="preserve">
+						<g>
+							<g id="text-1" data-name="text-1">
+								<g>
+									<text transform="matrix(0.9769 0 0 1 671.9965 32.8051)" display="none" font-family="'Georgia-Bold'" font-size="12px">Precinct</text>
+									<text transform="matrix(0.9769 0 0 1 694.9496 44.2406)" display="none" font-family="'Georgia'" font-size="12px">113th</text>
+								</g>
+							</g>
+							
+								<ellipse id="path-1" data-name="path-1" fill="none" stroke="#DF2500" stroke-miterlimit="10" cx="712.058" cy="572.814" rx="18.958" ry="14.314"/>
+						</g>
+						<style>
+						#g-all_cases-all_web-interactions-img rect, #g-all_cases-all_web-interactions-img circle, #g-all_cases-all_web-interactions-img path, #g-all_cases-all_web-interactions-img line, #g-all_cases-all_web-interactions-img polyline, #g-all_cases-all_web-interactions-img polygon { vector-effect: non-scaling-stroke; }
+						</style>
+						</svg>
+
+								<div id="g-ai1-1" class="g-interactions g-aiAbs g-aiPointText" style="top:4.9385%;margin-top:-7.9px;right:5.0005%;width:72px;">
+									<p class="g-pstyle0">Precinct</p>
+								</div>
+								<div id="g-ai1-2" class="g-interactions g-aiAbs g-aiPointText" style="top:6.7555%;margin-top:-7.9px;right:5.0067%;width:49px;">
+									<p class="g-pstyle1">113th</p>
+								</div>
+								<div id="g-ai1-3" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:30.0459%;margin-top:-7.9px;right:83.8441%;width:115px;">
+									<p class="g-pstyle1">Forcible touching</p>
+								</div>
+								<div id="g-ai1-4" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:31.5325%;margin-top:-7.9px;right:47.3878%;width:54px;">
+									<p class="g-pstyle0">2020</p>
+								</div>
+								<div id="g-ai1-5" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:31.8629%;margin-top:-7.9px;right:93.4549%;width:39px;">
+									<p class="g-pstyle1">115</p>
+								</div>
+								<div id="g-ai1-6" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:33.0192%;margin-top:-7.9px;right:44.8846%;width:73px;">
+									<p class="g-pstyle1">242 cases</p>
+								</div>
+								<div id="g-ai1-7" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:36.1576%;margin-top:-7.9px;right:88.5138%;width:79px;">
+									<p class="g-pstyle1">Sex crimes</p>
+								</div>
+								<div id="g-ai1-8" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:37.8094%;margin-top:-7.9px;right:47.8293%;width:51px;">
+									<p class="g-pstyle0">2017</p>
+								</div>
+								<div id="g-ai1-9" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:37.9746%;margin-top:-7.9px;right:93.5034%;width:42px;">
+									<p class="g-pstyle1">427</p>
+								</div>
+								<div id="g-ai1-10" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:39.296%;margin-top:-7.9px;right:48.9458%;width:41px;">
+									<p class="g-pstyle1">375</p>
+								</div>
+								<div id="g-ai1-11" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:44.0862%;margin-top:-7.9px;right:86.449%;width:98px;">
+									<p class="g-pstyle1">Felony assault</p>
+								</div>
+								<div id="g-ai1-12" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:44.5818%;margin-top:-7.9px;right:47.5245%;width:51px;">
+									<p class="g-pstyle0">2021</p>
+								</div>
+								<div id="g-ai1-13" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:46.2336%;margin-top:-7.9px;right:48.3348%;width:44px;">
+									<p class="g-pstyle1">600</p>
+								</div>
+								<div id="g-ai1-14" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:46.2336%;margin-top:-7.9px;right:93.0899%;width:44px;">
+									<p class="g-pstyle1">600</p>
+								</div>
+								<div id="g-ai1-15" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:54.9881%;margin-top:-7.9px;right:47.4684%;width:52px;">
+									<p class="g-pstyle0">2019</p>
+								</div>
+								<div id="g-ai1-16" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:56.6399%;margin-top:-7.9px;right:48.5634%;width:43px;">
+									<p class="g-pstyle1">660</p>
+								</div>
+								<div id="g-ai1-17" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:58.4569%;margin-top:-7.9px;right:89.8354%;width:71px;">
+									<p class="g-pstyle1">Assault 3</p>
+								</div>
+								<div id="g-ai1-18" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:60.2739%;margin-top:-7.9px;right:92.943%;width:48px;">
+									<p class="g-pstyle1">1498</p>
+								</div>
+								<div id="g-ai1-19" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:66.2203%;margin-top:-7.9px;right:47.8856%;width:52px;">
+									<p class="g-pstyle0">2018</p>
+								</div>
+								<div id="g-ai1-20" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:67.8721%;margin-top:-7.9px;right:48.9997%;width:42px;">
+									<p class="g-pstyle1">763</p>
+								</div>
+								<div id="g-ai1-21" class="g-interactions g-aiAbs g-aiPointText" style="top:79.9364%;margin-top:-7.9px;right:4.8705%;width:47px;">
+									<p class="g-pstyle1">84th</p>
+								</div>
+								<div id="g-ai1-22" class="g-interactions g-aiAbs g-aiPointText" style="top:82.4151%;margin-top:-7.9px;right:6.1478%;width:37px;">
+									<p class="g-pstyle1">1st</p>
+								</div>
+								<div id="g-ai1-23" class="g-interactions g-aiAbs g-aiPointText" style="top:85.8842%;margin-top:-7.9px;right:4.996%;width:46px;">
+									<p class="g-pstyle1">18th</p>
+								</div>
+								<div id="g-ai1-24" class="g-interactions g-aiAbs g-aiPointText" style="top:89.3528%;margin-top:-7.9px;right:5.1257%;width:45px;">
+									<p class="g-pstyle1">13th</p>
+								</div>
+								<div id="g-ai1-25" class="g-interactions g-aiAbs g-aiPointText" style="top:94.138%;margin-top:-7.9px;right:5.1266%;width:45px;">
+									<p class="g-pstyle1">14th</p>
+								</div>
+							</div>
+
+							<!-- Artboard: all_laptop -->
+							<div id="g-all_cases-all_laptop" class="g-artboard" style="width:564px; height:520.148539984159px;" data-aspect-ratio="1.084" data-min-width="564" data-max-width="759">
+						<div style=""></div>
+								<img id="g-all_cases-all_laptop-img" class="g-aiImg" alt="" src="all_cases-all_laptop.png"/>
+						<!-- Generator: Adobe Illustrator 26.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+						<svg class="g-aiImg" version="1.2" baseProfile="tiny" id="g-all_cases-all_laptop-interactions-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+							x="0px" y="0px" viewBox="0 0 563.635 520.149" overflow="visible" xml:space="preserve">
+						<g>
+							<g id="text-3" data-name="text-3">
+								<g>
+									<text transform="matrix(0.9769 0 0 1 480.1055 15.1078)" display="none" font-family="'Georgia-Bold'" font-size="12px">Precinct</text>
+									<text transform="matrix(0.9769 0 0 1 498.0586 26.5433)" display="none" font-family="'Georgia'" font-size="12px">113th</text>
+								</g>
+							</g>
+							
+								<ellipse id="path-2" data-name="path-2" fill="none" stroke="#DF2500" stroke-miterlimit="10" cx="510.471" cy="494.287" rx="18.958" ry="14.314"/>
+						</g>
+						<style>
+						#g-all_cases-all_laptop-interactions-img rect, #g-all_cases-all_laptop-interactions-img circle, #g-all_cases-all_laptop-interactions-img path, #g-all_cases-all_laptop-interactions-img line, #g-all_cases-all_laptop-interactions-img polyline, #g-all_cases-all_laptop-interactions-img polygon { vector-effect: non-scaling-stroke; }
+						</style>
+						</svg>
+
+								<div id="g-ai2-1" class="g-interactions g-aiAbs g-aiPointText" style="top:2.2874%;margin-top:-7.9px;right:6.0097%;width:72px;">
+									<p class="g-pstyle0">Precinct</p>
+								</div>
+								<div id="g-ai2-2" class="g-interactions g-aiAbs g-aiPointText" style="top:4.4022%;margin-top:-7.9px;right:6.9046%;width:49px;">
+									<p class="g-pstyle1">113th</p>
+								</div>
+								<div id="g-ai2-3" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:31.9217%;margin-top:-8px;right:79.0876%;width:116px;">
+									<p class="g-pstyle1">Forcible touching</p>
+								</div>
+								<div id="g-ai2-4" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:33.4324%;margin-top:-7.9px;right:47.159%;width:54px;">
+									<p class="g-pstyle0">2020</p>
+								</div>
+								<div id="g-ai2-5" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:34.2152%;margin-top:-8px;right:87.0422%;width:69px;">
+									<p class="g-pstyle1">115 cases</p>
+								</div>
+								<div id="g-ai2-6" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:35.1626%;margin-top:-7.9px;right:43.9499%;width:73px;">
+									<p class="g-pstyle1">242 cases</p>
+								</div>
+								<div id="g-ai2-7" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:38.0464%;margin-top:-7.9px;right:85.2888%;width:79px;">
+									<p class="g-pstyle1">Sex crimes</p>
+								</div>
+								<div id="g-ai2-8" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:38.6232%;margin-top:-7.9px;right:47.7406%;width:51px;">
+									<p class="g-pstyle0">2017</p>
+								</div>
+								<div id="g-ai2-9" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:40.359%;margin-top:-7.9px;right:49.3622%;width:41px;">
+									<p class="g-pstyle1">375</p>
+								</div>
+								<div id="g-ai2-10" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:40.3535%;margin-top:-7.9px;right:91.9826%;width:42px;">
+									<p class="g-pstyle1">427</p>
+								</div>
+								<div id="g-ai2-11" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:44.3908%;margin-top:-7.9px;right:47.745%;width:51px;">
+									<p class="g-pstyle0">2021</p>
+								</div>
+								<div id="g-ai2-12" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:44.9675%;margin-top:-7.9px;right:82.3231%;width:98px;">
+									<p class="g-pstyle1">Felony assault</p>
+								</div>
+								<div id="g-ai2-13" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:46.5056%;margin-top:-7.9px;right:48.9212%;width:44px;">
+									<p class="g-pstyle1">600</p>
+								</div>
+								<div id="g-ai2-14" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:47.2746%;margin-top:-7.9px;right:91.6028%;width:44px;">
+									<p class="g-pstyle1">600</p>
+								</div>
+								<div id="g-ai2-15" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:53.2344%;margin-top:-7.9px;right:47.569%;width:52px;">
+									<p class="g-pstyle0">2019</p>
+								</div>
+								<div id="g-ai2-16" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:55.3492%;margin-top:-7.9px;right:49.0445%;width:43px;">
+									<p class="g-pstyle1">660</p>
+								</div>
+								<div id="g-ai2-17" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:56.5027%;margin-top:-7.9px;right:86.467%;width:71px;">
+									<p class="g-pstyle1">Assault 3</p>
+								</div>
+								<div id="g-ai2-18" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:58.8097%;margin-top:-7.9px;right:90.829%;width:48px;">
+									<p class="g-pstyle1">1498</p>
+								</div>
+								<div id="g-ai2-19" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:62.078%;margin-top:-7.9px;right:47.5706%;width:52px;">
+									<p class="g-pstyle0">2018</p>
+								</div>
+								<div id="g-ai2-20" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:64.0006%;margin-top:-7.9px;right:49.072%;width:42px;">
+									<p class="g-pstyle1">763</p>
+								</div>
+								<div id="g-ai2-21" class="g-interactions g-aiAbs g-aiPointText" style="top:82.8485%;margin-top:-7.9px;right:7.5522%;width:47px;">
+									<p class="g-pstyle1">84th</p>
+								</div>
+								<div id="g-ai2-22" class="g-interactions g-aiAbs g-aiPointText" style="top:85.3489%;margin-top:-7.9px;right:9.2734%;width:37px;">
+									<p class="g-pstyle1">1st</p>
+								</div>
+								<div id="g-ai2-23" class="g-interactions g-aiAbs g-aiPointText" style="top:87.8485%;margin-top:-7.9px;right:7.7215%;width:46px;">
+									<p class="g-pstyle1">18th</p>
+								</div>
+								<div id="g-ai2-24" class="g-interactions g-aiAbs g-aiPointText" style="top:91.1166%;margin-top:-7.9px;right:7.896%;width:45px;">
+									<p class="g-pstyle1">13th</p>
+								</div>
+								<div id="g-ai2-25" class="g-interactions g-aiAbs g-aiPointText" style="top:94.9558%;margin-top:-7.9px;right:7.8972%;width:45px;">
+									<p class="g-pstyle1">14th</p>
+								</div>
+							</div>
+
+						</div>
+
+						<!-- End ai2html - 2022-04-16 20:30 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+
+		
+
+						<!-- Scrolly code here -->
+
+						<!-- ai2html goes above this line -->
+
+						</div>
+						</div>
+
+						<div class="scrolly-overlay">
+							<div class="step" id="step-zero">
+							<p>Assault in the 3rd degree and its more serious version — felony assault — are the most common transit crimes
+							you are likely to be a victim of in NYC. Over 60 percent of all arrests are for these crimes.
+	
+							</div>
+							<div class="step" id="step-one">
+								<p>14th Precinct, aka Midtown South precinct, made the most arrests over all.
+									No surprise there. That jurisdiction covers Times Square, Grand Central Terminal, Penn Station and Madison Square Garden.</p>
+								</div>
+							<div class="step" id="step-two">
+								<p>
+								And yes, sex crimes are high up there too! Be careful out there people!
+								</p>
+							</div>
+						</div>
+					</section>
+
+
+
+
+
+
+															
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<h4>How the precincts with the highest arrest records compare</h4>
+					<!-- Insert scroll rules here for timeline -->
+					<section id="scrolly" class="side-by-side">
+						<div class="sticky-thing">
+							<div class="ai2html-container">
+
+						<!-- ai2html goes below this line -->	
+
+					
+
+
+
+
+
+
+
+
+
+
+						
+
+						<!-- Generated by ai2html v0.106.0 - 2022-04-16 18:55 -->
+						<!-- ai file: top_10.svg -->
+						<style media="screen,print">
+							#g-top_10_svg-box ,
+							#g-top_10_svg-box .g-artboard {
+								margin:0 auto;
+							}
+							#g-top_10_svg-box p {
+								margin:0;
+							}
+							#g-top_10_svg-box .g-aiAbs {
+								position:absolute;
+							}
+							#g-top_10_svg-box .g-aiImg {
+								position:absolute;
+								top:0;
+								display:block;
+								width:100% !important;
+							}
+							#g-top_10_svg-box .g-aiSymbol {
+								position: absolute;
+								box-sizing: border-box;
+							}
+							#g-top_10_svg-box .g-aiPointText p { white-space: nowrap; }
+							#g-top_10_svg-top_web {
+								position:relative;
+								overflow:hidden;
+							}
+							#g-top_10_svg-top_web p {
+								font-family:georgia,'times new roman',times,serif;
+								font-weight:bold;
+								line-height:14px;
+								height:auto;
+								opacity:1;
+								letter-spacing:0em;
+								font-size:12px;
+								text-align:left;
+								color:rgb(0,0,0);
+								text-transform:none;
+								padding-bottom:0;
+								padding-top:0;
+								mix-blend-mode:normal;
+								font-style:normal;
+								position:static;
+							}
+							#g-top_10_svg-top_web .g-pstyle0 {
+								height:14px;
+							}
+							#g-top_10_svg-top_web .g-pstyle1 {
+								height:14px;
+								text-align:right;
+							}
+							#g-top_10_svg-top_laptop {
+								position:relative;
+								overflow:hidden;
+							}
+							#g-top_10_svg-top_laptop p {
+								font-family:georgia,'times new roman',times,serif;
+								font-weight:bold;
+								line-height:14px;
+								height:auto;
+								opacity:1;
+								letter-spacing:0em;
+								font-size:12px;
+								text-align:left;
+								color:rgb(0,0,0);
+								text-transform:none;
+								padding-bottom:0;
+								padding-top:0;
+								mix-blend-mode:normal;
+								font-style:normal;
+								position:static;
+							}
+							#g-top_10_svg-top_laptop .g-pstyle0 {
+								height:14px;
+							}
+							#g-top_10_svg-top_laptop .g-pstyle1 {
+								height:14px;
+								text-align:right;
+							}
+							#g-top_10_svg-top_mobile {
+								position:relative;
+								overflow:hidden;
+							}
+							#g-top_10_svg-top_mobile p {
+								font-family:georgia,'times new roman',times,serif;
+								font-weight:bold;
+								line-height:14px;
+								height:auto;
+								opacity:1;
+								letter-spacing:0em;
+								font-size:12px;
+								text-align:left;
+								color:rgb(0,0,0);
+								text-transform:none;
+								padding-bottom:0;
+								padding-top:0;
+								mix-blend-mode:normal;
+								font-style:normal;
+								position:static;
+							}
+							#g-top_10_svg-top_mobile .g-pstyle0 {
+								height:14px;
+							}
+							#g-top_10_svg-top_mobile .g-pstyle1 {
+								height:14px;
+								text-align:right;
+							}
+
+						</style>
+
+						<div id="g-top_10_svg-box" class="ai2html">
+
+							<!-- Artboard: top_web -->
+							<div id="g-top_10_svg-top_web" class="g-artboard" style="width:750px; height:600px;" data-aspect-ratio="1.25" data-min-width="750">
+						<div style=""></div>
+								<img id="g-top_10_svg-top_web-img" class="g-aiImg" alt="" src="top_10_svg-top_web.png"/>
+						<!-- Generator: Adobe Illustrator 26.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+						<svg class="g-aiImg" version="1.2" baseProfile="tiny" id="g-top_10_svg-top_web-interactions-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+							x="0px" y="0px" viewBox="0 0 750 600" overflow="visible" xml:space="preserve">
+						<g>
+							<g id="text-3" data-name="text-3">
+								<text transform="matrix(1 0 0 1 698.3805 119.8829)" display="none" font-family="'Georgia-Bold'" font-size="12px">1st</text>
+								<text transform="matrix(1 0 0 1 691.7977 167.5388)" display="none" font-family="'Georgia-Bold'" font-size="12px">18th</text>
+								<text transform="matrix(1 0 0 1 689.6814 233.0653)" display="none" font-family="'Georgia-Bold'" font-size="12px">84th</text>
+							</g>
+						</g>
+						<style>
+						#g-top_10_svg-top_web-interactions-img rect, #g-top_10_svg-top_web-interactions-img circle, #g-top_10_svg-top_web-interactions-img path, #g-top_10_svg-top_web-interactions-img line, #g-top_10_svg-top_web-interactions-img polyline, #g-top_10_svg-top_web-interactions-img polygon { vector-effect: non-scaling-stroke; }
+						</style>
+						</svg>
+
+								<div id="g-ai0-1" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:8.1497%;margin-top:-7.9px;left:5.2216%;width:131px;">
+									<p class="g-pstyle0">Forcible touching</p>
+								</div>
+								<div id="g-ai0-2" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:10.1497%;margin-top:-7.9px;left:5.2216%;width:35px;">
+									<p class="g-pstyle0">72</p>
+								</div>
+								<div id="g-ai0-3" class="g-interactions g-aiAbs g-aiPointText" style="top:19.483%;margin-top:-7.9px;right:4.6159%;width:39px;">
+									<p class="g-pstyle1">1st</p>
+								</div>
+								<div id="g-ai0-4" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:20.3163%;margin-top:-7.9px;left:5.1688%;width:110px;">
+									<p class="g-pstyle0">Felony assault</p>
+								</div>
+								<div id="g-ai0-5" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:22.3163%;margin-top:-7.9px;left:5.1688%;width:40px;">
+									<p class="g-pstyle0">127</p>
+								</div>
+								<div id="g-ai0-6" class="g-interactions g-aiAbs g-aiPointText" style="top:27.3163%;margin-top:-7.9px;right:4.1603%;width:49px;">
+									<p class="g-pstyle1">18th</p>
+								</div>
+								<div id="g-ai0-7" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:38.3163%;margin-top:-7.9px;left:5.4393%;width:89px;">
+									<p class="g-pstyle0">Sex crimes</p>
+								</div>
+								<div id="g-ai0-8" class="g-interactions g-aiAbs g-aiPointText" style="top:38.3163%;margin-top:-7.9px;right:4.1758%;width:51px;">
+									<p class="g-pstyle1">84th</p>
+								</div>
+								<div id="g-ai0-9" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:40.3163%;margin-top:-7.9px;left:5.4393%;width:40px;">
+									<p class="g-pstyle0">195</p>
+								</div>
+								<div id="g-ai0-10" class="g-interactions g-aiAbs g-aiPointText" style="top:54.183%;margin-top:-15.1px;right:4.2234%;width:51px;">
+									<p class="g-pstyle1">13th </p>
+								</div>
+								<div id="g-ai0-11" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:69.1497%;margin-top:-7.9px;left:5.3465%;width:78px;">
+									<p class="g-pstyle0">Assault 3</p>
+								</div>
+								<div id="g-ai0-12" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:71.1497%;margin-top:-7.9px;left:5.3896%;width:41px;">
+									<p class="g-pstyle0">374</p>
+								</div>
+								<div id="g-ai0-13" class="g-interactions g-aiAbs g-aiPointText" style="top:80.183%;margin-top:-15.1px;right:4.1414%;width:69px;">
+									<p class="g-pstyle1">14th</p>
+									<p class="g-pstyle1">Precinct </p>
+								</div>
+							</div>
+
+							<!-- Artboard: top_laptop -->
+							<div id="g-top_10_svg-top_laptop" class="g-artboard" style="width:550px; height:550px;" data-aspect-ratio="1" data-min-width="550" data-max-width="749">
+						<div style=""></div>
+								<img id="g-top_10_svg-top_laptop-img" class="g-aiImg" alt="" src="top_10_svg-top_laptop.png"/>
+						<!-- Generator: Adobe Illustrator 26.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+						<svg class="g-aiImg" version="1.2" baseProfile="tiny" id="g-top_10_svg-top_laptop-interactions-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+							x="0px" y="0px" viewBox="0 0 550 550" overflow="visible" xml:space="preserve">
+						<g>
+							<g id="text-2" data-name="text-2">
+								<text transform="matrix(1 0 0 1 509.1179 111.2435)" display="none" font-family="'Georgia-Bold'" font-size="12px">1st</text>
+								<text transform="matrix(1 0 0 1 498.7974 156.116)" display="none" font-family="'Georgia-Bold'" font-size="12px">18th</text>
+								<text transform="matrix(1 0 0 1 497.0819 215.0878)" display="none" font-family="'Georgia-Bold'" font-size="12px">84th</text>
+							</g>
+						</g>
+						<style>
+						#g-top_10_svg-top_laptop-interactions-img rect, #g-top_10_svg-top_laptop-interactions-img circle, #g-top_10_svg-top_laptop-interactions-img path, #g-top_10_svg-top_laptop-interactions-img line, #g-top_10_svg-top_laptop-interactions-img polyline, #g-top_10_svg-top_laptop-interactions-img polygon { vector-effect: non-scaling-stroke; }
+						</style>
+						</svg>
+
+								<div id="g-ai1-1" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:7.9814%;margin-top:-7.9px;left:5.6507%;width:131px;">
+									<p class="g-pstyle0">Forcible touching</p>
+								</div>
+								<div id="g-ai1-2" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:10.1633%;margin-top:-7.9px;left:5.6507%;width:35px;">
+									<p class="g-pstyle0">72</p>
+								</div>
+								<div id="g-ai1-3" class="g-interactions g-aiAbs g-aiPointText" style="top:19.6178%;margin-top:-7.9px;right:4.3422%;width:39px;">
+									<p class="g-pstyle1">1st</p>
+								</div>
+								<div id="g-ai1-4" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:21.2542%;margin-top:-7.9px;left:5.5787%;width:110px;">
+									<p class="g-pstyle0">Felony assault</p>
+								</div>
+								<div id="g-ai1-5" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:23.436%;margin-top:-7.9px;left:5.5787%;width:40px;">
+									<p class="g-pstyle0">127</p>
+								</div>
+								<div id="g-ai1-6" class="g-interactions g-aiAbs g-aiPointText" style="top:27.7996%;margin-top:-7.9px;right:4.4006%;width:49px;">
+									<p class="g-pstyle1">18th</p>
+								</div>
+								<div id="g-ai1-7" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:38.5269%;margin-top:-7.9px;left:6.0872%;width:89px;">
+									<p class="g-pstyle0">Sex crimes</p>
+								</div>
+								<div id="g-ai1-8" class="g-interactions g-aiAbs g-aiPointText" style="top:38.5269%;margin-top:-7.9px;right:4.3487%;width:51px;">
+									<p class="g-pstyle1">84th</p>
+								</div>
+								<div id="g-ai1-9" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:40.7087%;margin-top:-7.9px;left:6.0872%;width:40px;">
+									<p class="g-pstyle0">195</p>
+								</div>
+								<div id="g-ai1-10" class="g-interactions g-aiAbs g-aiPointText" style="top:54.1997%;margin-top:-15.1px;right:4.4277%;width:51px;">
+									<p class="g-pstyle1">13th </p>
+								</div>
+								<div id="g-ai1-11" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:70.3451%;margin-top:-7.9px;left:5.7622%;width:78px;">
+									<p class="g-pstyle0">Assault 3</p>
+								</div>
+								<div id="g-ai1-12" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:72.5269%;margin-top:-7.9px;left:5.821%;width:41px;">
+									<p class="g-pstyle0">374</p>
+								</div>
+								<div id="g-ai1-13" class="g-interactions g-aiAbs g-aiPointText" style="top:79.1088%;margin-top:-15.1px;right:4.8205%;width:69px;">
+									<p class="g-pstyle1">14th</p>
+									<p class="g-pstyle1">Precinct </p>
+								</div>
+							</div>
+
+							<!-- Artboard: top_mobile -->
+							<div id="g-top_10_svg-top_mobile" class="g-artboard" style="max-width: 450px;max-height: 450px" data-aspect-ratio="1" data-min-width="0" data-max-width="549">
+						<div style="padding: 0 0 100% 0;"></div>
+								<img id="g-top_10_svg-top_mobile-img" class="g-aiImg" alt="" src="top_10_svg-top_mobile.png"/>
+						<!-- Generator: Adobe Illustrator 26.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+						<svg class="g-aiImg" version="1.2" baseProfile="tiny" id="g-top_10_svg-top_mobile-interactions-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+							x="0px" y="0px" viewBox="0 0 450 450" overflow="visible" xml:space="preserve">
+						<g>
+							<g id="text-1" data-name="text-1">
+								<text transform="matrix(1 0 0 1 384.1387 182.4771)" display="none" font-family="'Georgia-Bold'" font-size="12px">84th</text>
+								<text transform="matrix(1 0 0 1 389.1494 134.2349)" display="none" font-family="'Georgia-Bold'" font-size="12px">18th</text>
+								<text transform="matrix(1 0 0 1 398.9737 94.6202)" display="none" font-family="'Georgia-Bold'" font-size="12px">1st</text>
+							</g>
+						</g>
+						<style>
+						#g-top_10_svg-top_mobile-interactions-img rect, #g-top_10_svg-top_mobile-interactions-img circle, #g-top_10_svg-top_mobile-interactions-img path, #g-top_10_svg-top_mobile-interactions-img line, #g-top_10_svg-top_mobile-interactions-img polyline, #g-top_10_svg-top_mobile-interactions-img polygon { vector-effect: non-scaling-stroke; }
+						</style>
+						</svg>
+
+								<div id="g-ai2-1" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:7.7551%;margin-top:-7.9px;left:6.739%;width:131px;">
+									<p class="g-pstyle0">Forcible touching</p>
+								</div>
+								<div id="g-ai2-2" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:10.4218%;margin-top:-7.9px;left:6.739%;width:35px;">
+									<p class="g-pstyle0">72</p>
+								</div>
+								<div id="g-ai2-3" class="g-interactions g-aiAbs g-aiPointText" style="top:20.1995%;margin-top:-7.9px;right:7.5613%;width:39px;">
+									<p class="g-pstyle1">1st</p>
+								</div>
+								<div id="g-ai2-4" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:21.9773%;margin-top:-7.9px;left:6.5683%;width:110px;">
+									<p class="g-pstyle0">Felony assault</p>
+								</div>
+								<div id="g-ai2-5" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:24.644%;margin-top:-7.9px;left:6.5683%;width:40px;">
+									<p class="g-pstyle0">127</p>
+								</div>
+								<div id="g-ai2-6" class="g-interactions g-aiAbs g-aiPointText" style="top:29.0884%;margin-top:-7.9px;right:7.5222%;width:49px;">
+									<p class="g-pstyle1">18th</p>
+								</div>
+								<div id="g-ai2-7" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:38.4218%;margin-top:-7.9px;left:6.0824%;width:89px;">
+									<p class="g-pstyle0">Sex crimes</p>
+								</div>
+								<div id="g-ai2-8" class="g-interactions g-aiAbs g-aiPointText" style="top:39.7551%;margin-top:-7.9px;right:8.1913%;width:51px;">
+									<p class="g-pstyle1">84th</p>
+								</div>
+								<div id="g-ai2-9" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:41.0884%;margin-top:-7.9px;left:6.0824%;width:40px;">
+									<p class="g-pstyle0">195</p>
+								</div>
+								<div id="g-ai2-10" class="g-interactions g-aiAbs g-aiPointText" style="top:56.9107%;margin-top:-15.1px;right:7.5832%;width:51px;">
+									<p class="g-pstyle1">13th </p>
+								</div>
+								<div id="g-ai2-11" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:70.8662%;margin-top:-7.9px;left:6.5844%;width:78px;">
+									<p class="g-pstyle0">Assault 3</p>
+								</div>
+								<div id="g-ai2-12" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:73.5329%;margin-top:-7.9px;left:6.6564%;width:41px;">
+									<p class="g-pstyle0">374</p>
+								</div>
+								<div id="g-ai2-13" class="g-interactions g-aiAbs g-aiPointText" style="top:80.0218%;margin-top:-15.1px;right:7.4019%;width:69px;">
+									<p class="g-pstyle1">14th</p>
+									<p class="g-pstyle1">Precinct </p>
+								</div>
+							</div>
+
+						</div>
+
+						<!-- End ai2html - 2022-04-16 18:55 -->
+
+
+
+
+
+
+
+
+					
+
+
+
+						<!-- Scrolly code here -->
+
+						<!-- ai2html goes above this line -->
+
+							</div>
+						</div>
+
+						<div class="scrolly-overlay">
+							<div class="step" id="step-zero">
+								<p>Almost half of all arrests for assault and sex crimes were made by officers of the 14th Precinct.</p>
+							</div>
+							<div class="step" id="step-one">
+								<p>Those two crime cateogries are also quite high on the arrest records of the neighboring 13th Precinct compared to others.</p>
+							</div>
+							<div class="step" id="step-two">
+								<p>The 84th and 18th precinct recorded about the same rate (as 13th) of 3rd degree assault arrests. In case you are wondering what that is, it is 
+									recklessly causing injury to others with intent. Again, stay safe!'
+								</p>
+							</div>
+						</div>
+					</section>
+
+
+
+
+
+
+					<p>Mayor Eric Adams, a former cop, campaigned on promises to make NYC safer. In the wake of the subway attack last week, transit safety
+						would continue to be a focal point of how how true to those promises the mayor has been.
+					</p>
+
+
+
+
+
+
+
+
+
+
+
+				<script>
+
+				function hideNote() {
+				// annotation: #path-1, #text-1, #path-2, #text-2
+				d3.select("#path-1").classed('hidden', true)
+				d3.select("#text-1").classed('hidden', true)
+				d3.select("#path-2").classed('hidden', true)
+				d3.select("#text-2").classed('hidden', true)
+				}
+
+				/* Scrollytelling code goes under here */
+				hideNote()
+
+				d3.select("#step-one").on('stepout', function(e) {
+				if(e.detail.direction === 'up') {
+					// undo the changes from step one
+					hideNote()
+				}
+				})
+
+				d3.select("#step-one").on('stepin', function(e) {
+				console.log("Got to step one")
+				// undo changes from step two
+				d3.selectAll("[data-name='oceania'] path").style('fill', 'none')
+
+				// do changes for step one
+				d3.select("#path-1").classed('hidden', false)
+				d3.select("#text-1").classed('hidden', false)
+				d3.select("#path-2").classed('hidden', false)
+				d3.select("#text-2").classed('hidden', false)
+
+				d3.select("#step-two").on('stepin', function(e) {
+
+				// undo changes from step two
+				d3.select("#path-1").classed('hidden', true)
+				d3.select("#text-1").classed('hidden', true)
+				d3.select("#path-2").classed('hidden', true)
+				d3.select("#text-2").classed('hidden', true)
+				})
+
+
+				// do changes for step two
+				console.log("Got to step two")
+				d3.selectAll("[data-name='oceania'] path").style('fill', 'blue')
+
+				})
+
+				d3.select("#step-three").on('stepin', function(e) {
+				// undo changes from step two
+
+
+
+				d3.selectAll("[data-name='oceania'] path").style('fill', 'none')
+				})
+
+
+				</script>
+
+				<script>
+				const scroller = scrollama();
+
+				scroller
+				.setup({
+					step: "#scrolly .scrolly-overlay .step",
+					offset: 0.5,
+					debug: false
+				})
+				.onStepEnter(function({ element, index, direction}) {
+					const event = new CustomEvent('stepin', { detail: { direction: direction } })
+					element.dispatchEvent(event);
+				})
+				.onStepExit(function({ element, index, direction }) {
+					const event = new CustomEvent('stepout', { detail: { direction: direction } })
+					element.dispatchEvent(event);
+				});
+
+				window.addEventListener("resize", scroller.resize);
+				</script>
+
+
+				<!-- End of scrolly code here -->
+
+					
+					
+					
+					
+					
+				
+					
+					
+					
+					
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+				<!-- ai2html resizer script -->
+			  
+				<script type="text/javascript">
+					(function() {
+						// only want one resizer on the page
+						if (document.documentElement.className.indexOf("g-resizer-v3-init") > -1) return;
+						document.documentElement.className += " g-resizer-v3-init";
+						// require IE9+
+						if (!("querySelector" in document)) return;
+						function resizer() {
+							var elements = Array.prototype.slice.call(document.querySelectorAll(".g-artboard[data-min-width]")),
+								widthById = {};
+							elements.forEach(function(el) {
+								var parent = el.parentNode,
+									width = widthById[parent.id] || parent.getBoundingClientRect().width,
+									minwidth = el.getAttribute("data-min-width"),
+									maxwidth = el.getAttribute("data-max-width");
+								widthById[parent.id] = width;
+				  
+								if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+									el.style.display = "block";
+								} else {
+									el.style.display = "none";
+								}
+							});
+							try {
+								if (window.parent && window.parent.$) {
+									window.parent.$("body").trigger("resizedcontent", [window]);
+								}
+								if (window.require) {
+									require(['foundation/main'], function() {
+										require(['shared/interactive/instances/app-communicator'], function(AppCommunicator) {
+											AppCommunicator.triggerResize();
+										});
+									});
+								}
+							} catch(e) { console.log(e); }
+						}
+				  
+						document.addEventListener('DOMContentLoaded', resizer);
+						// feel free to replace throttle with _.throttle, if available
+						window.addEventListener('resize', throttle(resizer, 200));        
+				  
+						function throttle(func, wait) {
+							// from underscore.js
+							var _now = Date.now || function() { return new Date().getTime(); },
+								context, args, result, timeout = null, previous = 0;
+							var later = function() {
+								previous = _now();
+								timeout = null;
+								result = func.apply(context, args);
+								if (!timeout) context = args = null;
+							};
+							return function() {
+								var now = _now(), remaining = wait - (now - previous);
+								context = this;
+								args = arguments;
+								if (remaining <= 0 || remaining > wait) {
+									if (timeout) {
+										clearTimeout(timeout);
+										timeout = null;
+									}
+									previous = now;
+									result = func.apply(context, args);
+									if (!timeout) context = args = null;
+								} else if (!timeout && options.trailing !== false) {
+									timeout = setTimeout(later, remaining);
+								}
+								return result;
+							};
+						}
+				  
+					   
+					})();
+				</script>
+			</div>
+
+				
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
 

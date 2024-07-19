@@ -1,0 +1,228 @@
+body {
+    margin: 0px;
+    padding: 2px;
+    width:100%;;
+    margin: 0 auto;
+    font-family: 'Merriweather';
+    font-size: 18px;
+    background-color: #081217;
+}
+
+h1 {
+    /* margin: 0 auto; */
+    text-align: center;
+    margin-top: 20px;
+	margin-bottom: 0px;
+    color: white;
+}
+
+h4 {
+    text-align: center;
+    opacity: 100%;
+    line-height: 1em;
+    top: 0px;
+    margin: 0px;
+}
+
+h2 {
+    text-align: center;
+    opacity: 100%;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+
+}
+/* h4 {
+margin-bottom: 0px;
+} */
+/* .story {
+	display: flex;
+	justify-content: center;
+} */
+
+a {
+    color: white;
+}
+
+p {
+    /* margin: 1em auto;  */
+	margin-top: 20px;
+    margin-bottom: 20px;
+    width: 90%;
+	padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Merriweather';
+    font-size: 18px;
+    color: white;
+}
+
+
+#map {
+    width: 100%;
+    height: 600px;
+    margin: 3em auto;
+    /* margin-left: 30em auto; */
+
+}
+
+
+#map2 {
+    width: 100%;
+    height: 600px;
+    margin: 3em auto;
+    /* margin-left: 30em auto; */
+
+}
+
+
+.mapboxgl-popup-content {
+	padding: 10px 10px 10px;
+	text-align: center;
+	border-radius: 10%;
+}
+
+.mapboxgl-popup-content h4 {
+    font-weight: 300;
+    font-size: 1em;
+    border-width: 0px 0px 0.2px 0px;
+    border-style: solid;
+    border-color: rgb(80, 80, 80);
+    margin-top: 0.5em;
+    margin-bottom: em;
+}
+
+.mapboxgl-popup-content h2 {
+    font-weight: 500;
+    margin-top: 0.5em;
+    margin-bottom: 0.3em;
+}
+.mapboxgl-popup-content p {
+    font-weight: 100;
+    /* margin-top: 0.3em; */
+    /* margin-bottom: 0em; */
+}
+
+#wildfire-legend {
+	Top: 18rem;
+	background-color: rgb(255, 255, 255);
+	opacity: 80%;
+	right: 1rem;
+	left: 38rem;
+	border-radius: 10px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	padding: 1em 1em 1em;
+	position: absolute;
+	font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	z-index: 100; 
+	max-width: 25%;
+	line-height: 1.5em;   
+}
+
+#wildfire-legend h3{
+	margin: 0px;
+
+}
+
+.legend h4 {
+margin: 0 0 10px;
+}
+	
+#wildfire-legend div span {
+opacity: 100%;
+border-radius: 50%;
+display: inline-block;
+height: 15px;
+margin-right: 5px;
+width: 15px;
+/* opacity: 1; */
+}
+
+
+div#wildfire-legend.legend p {
+    /* margin: 1em auto;  */
+	margin-top: 10px;
+    margin-bottom: 5px;
+    width: 90%;
+	padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Merriweather';
+    font-size: 10px;
+}
+
+#cali-legend {
+	Top: 10rem;
+	background-color: rgb(255, 255, 255);
+	opacity: 80%;
+	right: 2rem;
+	left: 2rem;
+	border-radius: 10px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	padding: 1em 1em 1em;
+	position: absolute;
+	font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	z-index: 100; 
+	max-width: 18%;
+	line-height: 1.5em;   
+}
+
+#cali-legend h3{
+	margin: 0px;
+
+}
+
+	
+#cali-legend div span {
+    opacity: 100%;
+    border-radius: 50%;
+    display: inline-block;
+    height: 15px;
+    margin-right: 5px;
+    width: 15px;
+    /* opacity: 1; */
+}
+
+
+div#cali-legend.legend p {
+    /* margin: 1em auto;  */
+	margin-top: 10px;
+    margin-bottom: 5px;
+    width: 90%;
+	padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Merriweather';
+    font-size: 10px;
+}
+
+
+.image-blurred-edge {
+    /* you need to match the shadow color to your background or image border for the desired effect*/
+    box-shadow: 0 0 8px 8px #081217;
+}
+
+
+
+em {
+	margin: 0; 
+	margin: 0px;
+	padding: 0px 5px;
+}
+
+.story-body {
+    max-width: 790px;
+    margin: 0 auto;
+}
+
+footer {
+	max-width: 790px;
+    margin: 0 auto;
+}
+
+
+#fire {
+    margin-top: 15px;
+    font-size: 100px;
+
+}
+
+img {
+    border-radius: 50%;
+}

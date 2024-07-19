@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buying a home in California? Maybe check this wildfire risk assessment first</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="story-body">
+        <h1>Buying a home in California? Maybe check these wildfire risk maps first</h1>
+        <p>By <a href="https://kfalayi.github.io/" target="_blank">Kunle Falayi</a></p>
+        <div id="fire" style="text-align:center">
+        <img src="images/flames.gif">
+        </div> 
+        <p>If you are a prospective homeowner in the U.S., especially in California, the state with the highest 
+            estimated number of housing units directly at risk of wildfire annually, it may be wise to check the 
+            wildfire risk level in the location you are interested in.
+        </p>
+        <p>Enter the USDA spatial dataset of wildfire risk dataset. The dataset gives a great idea of what risks residents 
+            and homeowners may expect in each state and county. Because I'm nice, I didn't want you to pore over this dataset,
+            I have simply mapped it for you.  Each row in the dataset represents each county in the US with 46 of the columns representing different measurements of risk.
+        </p>
+        
+        <br>
 
+
+        <div id='map'>
+            <div id="wildfire-legend" class="legend">
+                <h3 style="text-align:center">Distribution of expected annual number of housing units exposed to wildfire</h3>
+                <p style="color: black; font-size: 12px">Click each state for details</p>
+                <div><span style="background-color: #ffffb2"></span>0-20 percentile</div>
+                <div><span style="background-color: #fed976"></span>20-40 percentile</div>
+                <div><span style="background-color: #feb24c"></span>40-60 percentile</div>
+                <div><span style="background-color: #fd8d3c"></span>60-80 percentile</div>
+                <div><span style="background-color: #fc4e2a"></span>80-100 percentile</div>
+                <em>Source: USDA Wildfire Risk Data</em>
+            </div>
+        </div>
+        <p>In these maps, I focus on three of those columns: ‘expected annual housing units 
+            exposed(to wildfire risks)’, total number of housing units exposed and percentage of expected annual housing 
+            units with direct exposure. Rather than map the national risks level by county, I map by state by grouping the 
+            state, summing the expected annual and total number of HUs exposed. The percentage, I summed together, divided 
+            each state total by the number of rows in each state and divided by 100 to get the percentage of expected annual direct exposure for each state.
+        </p>
+    
+        <br>
+        <p>In the second map, I filtered the first county-level dataset to only California and used this as a second layer.
+        Don't mind the scary red of California. Once you zoom into the state, the counties are better, maybe.
+        </p>
+        <div id='map2'>
+            <div id="cali-legend" class="legend">
+                <h3 style="text-align:center">Distribution of expected annual number of housing units exposed to wildfire</h3>
+                <p style="color: black; font-size: 12px">Zoom in to see county-level details</p>
+                <div><span style="background-color: #ffffb2"></span>0-20 percentile</div>
+                <div><span style="background-color: #fed976"></span>20-40 percentile</div>
+                <div><span style="background-color: #feb24c"></span>40-60 percentile</div>
+                <div><span style="background-color: #fd8d3c"></span>60-80 percentile</div>
+                <div><span style="background-color: #fc4e2a"></span>80-100 percentile</div>
+                <em>Source: USDA Wildfire Risk Data</em>
+            </div>
+        </div>
+        <p>Note: I believe a quantile classification of the color scheme does more justice to the variations in the number of housing units classified under expected annual direct wildfire expsure.</p>
+    </div>
+
+    
+    
+    <script type='text/javascript' src="map.js"></script>
+    <hr>
+</body>
+
+<footer>
+    <p>See all datasets and analysis <a href="https://github.com/kfalayi/mapping-data/tree/main/wildfire-data" target="_blank">here.</a></p>
+</footer>
+</html>

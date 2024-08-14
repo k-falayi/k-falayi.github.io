@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arc Chart with D3</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #root {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .chart-container {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Unify Sans", sans-serif;
+        }
+
+        svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .candidate-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            text-anchor: middle;
+            alignment-baseline: middle;
+            font-family: "Unify Sans", sans-serif;
+        }
+
+        .arc-info, .progress-bar-info {
+            font-size: 1.3em;
+            text-anchor: middle;
+            alignment-baseline: middle;
+            font-family: "Unify Sans", sans-serif;
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        @media (min-width: 700px) {
+            .charts-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @font-face {
+            font-family: 'Unify Sans';
+            src: url('fonts/UnifySans_W_Rg.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Unify Sans Bd';
+            src: url('fonts/UnifySans_W_Bd.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Unify Serif';
+            src: url('fonts/UnifySerif_W_Rg.woff2') format('woff2');
+        }
+        
+        #progress-bar {
+            margin-top: 20px;
+        }
+        p {
+            font-size: 1.3em;
+            text-align: center;
+            margin: 10px 0; /* Ensure some spacing around the paragraph */
+            margin-bottom: 20px;
+            color: rgb(120, 120, 121);
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="root" class="usat-interactive-graphic">
+        <div class="chart-container">
+            <svg id="progress-bar"></svg>
+            <div class="bottom-text"></div>
+        </div>
+        <p>Read more details about <strong><span style='color:blue'>the model</span></strong> we built to project the expected number of votes in this election.</p>
+        <div class="charts-grid">
+            <div class="chart-container" id="chart1">
+                <svg></svg>
+            </div>
+            <div class="chart-container" id="chart2">
+                <svg></svg>
+            </div>
+            <div class="chart-container" id="chart3">
+                <svg></svg>
+            </div>
+            <div class="chart-container" id="chart4">
+                <svg></svg>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://www.gannett-cdn.com/experiments/usatoday/responsive/iframe-resizer/iframe-resizer.js"></script>
+</body>
+</html>

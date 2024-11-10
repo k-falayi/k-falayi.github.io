@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 2;
+    max-width: 55em;
+    margin: 0 auto;
+    font-family: 'Merriweather';
+    font-size: 18px;
+}
+
+h1 {
+    /* margin: 0 auto; */
+    text-align: center;
+    margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+.story {
+	display: flex;
+	justify-content: center;
+}
+
+p {
+    margin: 2em auto; 
+    margin-bottom: 0px;
+    width: 90%;
+	padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Merriweather';
+    font-size: 18px;
+}
+
+#map {
+    width: 90%;
+    height: 600px;
+    margin: 5em auto;
+}
+#map2 {
+    width: 90%;
+    height: 600px;
+    margin: 5em auto;
+}
+
+.mapboxgl-popup-content h4 {
+    font-weight: 300;
+    font-size: 0.9em;
+    border-width: 0px 0px 0.5px 0px;
+    border-style: solid;
+    border-color: rgb(80, 80, 80);
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.mapboxgl-popup-content h2 {
+    font-weight: 500;
+    margin-top: 0.5em;
+    margin-bottom: 0.3em;
+}
+.mapboxgl-popup-content p {
+    font-weight: 300;
+    margin-top: 0.3em;
+    margin-bottom: 0em;
+}

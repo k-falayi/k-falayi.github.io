@@ -1,0 +1,177 @@
+body {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  height: 100vh; /* Make the body fill the viewport height */
+}
+
+#map {
+  flex: 1; /* Ensures the map fills the remaining space */
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 600px; /* Default height for desktop */
+}
+
+footer {
+  text-align: left;
+  font-family: sans-serif;
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+  padding: 20px 0;
+  padding-left: 10px;;
+  
+  font-size: 14px;
+  border-top: 1px solid #ddd; /* Optional subtle line above the footer */
+}
+
+/* Title and subtitle */
+h2, p {
+  position: absolute;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+  padding: 0.5em;
+  max-width: 600px;
+  margin: 0;
+  z-index: 2;
+  font-family: sans-serif;
+}
+
+/* Positioning title and subtitle separately */
+h2 {
+  top: 20px;
+}
+
+p {
+  top: 120px;
+}
+
+/* Legend styling */
+#legend {
+  position: absolute;
+  top: 170px; /* Space below title and subtitle */
+  left: 15px;
+  /* background-color: rgba(255, 255, 255, 0.9); Slightly transparent white background */
+  border-radius: 5px;
+  padding: 10px 15px;
+  /* box-shadow: 0 1px 4px rgba(0,0,0,0.3); */
+  font-family: sans-serif;
+  font-size: 13px;
+  z-index: 2;
+  width: 250px;
+}
+
+.legend-scale {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.color-bar {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(to right, 
+      #cb181d, #fb6a4a, #fcae91, #fee5d9, #fee5d9 75%, 
+      #deebf7 75.1%, #023b96);
+  border: 1px solid #aaa;
+  margin: 5px 0;
+}
+
+.herd-line {
+  position: absolute;
+  left: 75%; /* Align with where the blue starts */
+  width: 2px;
+  height: 25px;
+  background-color: black;
+  top: -3px;
+}
+
+.herd-label {
+  position: absolute;
+  left: 65%;
+  top: 20px; /* Positions label below the line */
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* Labels for 'Below' and 'Above' */
+.legend-scale span:first-child { 
+  position: absolute;
+  top: -10px; /* Positions label above the color bar */
+  left: 0; /* Aligns with the left end of the color bar */
+  font-weight: bold;
+}
+
+.legend-scale span:last-child {
+  position: absolute;
+  top: -10px; /* Positions label above the color bar */
+  right: 0; /* Aligns with the right end of the color bar */
+  font-weight: bold;
+}
+
+
+/* Popup styling (from your original) */
+.mapboxgl-popup-content h4 {
+    font-weight: 300;
+    font-size: 0.9em;
+    border-width: 0px 0px 0.5px 0px;
+    border-style: solid;
+    border-color: rgb(80, 80, 80);
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.mapboxgl-popup-content h2 {
+    font-weight: 500;
+    margin-top: 0.5em;
+    margin-bottom: 0.3em;
+}
+
+.mapboxgl-popup-content p {
+    font-weight: 300;
+    margin-top: 0.3em;
+    margin-bottom: 0em;
+}
+
+footer {
+  position: relative;  /* Needed for absolute positioning inside it */
+  font-family: sans-serif;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 10px;
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+}
+
+/* Keep left-aligned source/note text flowing naturally */
+.footer-left {
+  padding-right: 160px; /* Leave space so text doesn't overlap logo */
+}
+
+/* Absolutely position the logo */
+.footer-right {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.footer-logo {
+  max-height: 50px;
+  height: auto;
+}
+
+/* On small screens (like phones), reduce height */
+@media (max-width: 600px) {
+  #map {
+    height: 400px;
+  }
+}
+
+/* Optional: container overflow management */
+.map-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}

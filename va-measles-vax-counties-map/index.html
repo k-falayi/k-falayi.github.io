@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Virginia kindergarten MMR vaccination map by county</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Mapbox script and CSS -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h2>Virginia's average measles vaccination by county and city</h2>
+    <p>Warren County accounts for the lowest rate of measles vaccination. But there are only a few kindergartners in the county.</p>
+
+    <div id="map"></div>
+
+    <!-- Legend -->
+    <div id="legend">
+        <div class="legend-scale">
+            <span>Below</span>
+            <div class="color-bar">
+                <div class="herd-line"></div>
+                <div class="herd-label">Herd<br>immunity</div>
+            </div>
+            <span>Above</span>
+        </div>
+    </div>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    <script src="map.js"></script>
+</body>
+<footer>
+  <div class="footer-left">
+    
+    <strong>Note:</strong> <em>This analysis did not include counties and cities with 
+    less than 10 kindergartners or where schools did not report vaccination data. 
+    Total number of students in each county represents only data reported</em><br>
+    Source: Virginia Department of Health | Map and analysis: Kunle Falayi
+  </div>
+  <div class="footer-right">
+    <img src="vcij-logo.png" alt="Logo" class="footer-logo">
+  </div>
+</footer>
+</html>
